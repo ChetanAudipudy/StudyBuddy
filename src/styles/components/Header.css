@@ -1,0 +1,13 @@
+.header-box{
+    background: rgba(0,0,0,1);
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    width: 100vw;
+    height: 100px;
+    text-align: center
+}
+.header-title{
+    margin: 10px;
+}

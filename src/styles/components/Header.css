@@ -6,7 +6,9 @@
     position: absolute;
     width: 100vw;
     height: 100px;
-    text-align: center
+    text-align: center;
+	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+
 }
 .header-title{
     margin: 10px;

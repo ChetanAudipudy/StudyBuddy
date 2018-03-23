@@ -1,0 +1,14 @@
+body {
+
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* background: url("https://images2.alphacoders.com/261/26102.jpg"); */
+    /* background:url("http://www.gsfdcy.com/data/img/12/1244431-book-wallpaper.jpg"); */
+    background: url("http://www.tokkoro.com/picsup/2997307-vintage-typewriters-books-glasses-wood-paper-pine-cones___mixed-wallpapers.jpg");
+    background-repeat:no-repeat;
+    background-position:right top;
+    background-size:cover;
+        
+  }

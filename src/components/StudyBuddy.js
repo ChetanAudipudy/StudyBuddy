@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import Signup from './Signup';
 
 
 export default class StudyBuddy extends React.Component {
@@ -14,11 +15,11 @@ export default class StudyBuddy extends React.Component {
     console.log('componentWillUnmount');
   }
   render() {
-    const subtitle = 'Put your life in the hands of a computer';
 
     return (
       <div>
-        <Header />
+      <Header />
+       <Signup />
       </div>
     );
   }

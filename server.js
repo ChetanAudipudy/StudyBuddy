@@ -1,6 +1,7 @@
 // initializes Node.js packages
 var bodyParser = require("body-parser");
 var express = require("express");
+var reload = require("reload");
 
 // initializes Express.js server and defines port
 var app = express();
@@ -13,6 +14,9 @@ app.use(bodyParser.json());
 // imports routes
 /*var routes = require("./controllers/CONTROLLERNAME.js");
 app.use(routes);*/
+
+// enables reloading
+setTimeout(function() { reload(app); }, 5000);
 
 // loads static files
 app.use(express.static("./public"));

@@ -23,133 +23,132 @@
 	align-items: center;
 	line-height: 45px;
 } */
-    #space{
-        box-sizing: border-box;
-    border-radius: 10px;
-    }
-  #space > div {
-    position: absolute;
-	top:50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-    width: 500px;
-    margin: auto;
-    border-radius: 10px;
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-    border-radius: 10px;
-	box-shadow: 0 15px 25px rgba(0,0,0,.5);
-	display: flex;
-	flex-direction: column;
-	
-
-  }
-  
-  #signup, #login {
-    width: 100%;
-    /* background: #78c9b1; */
-    background: rgba(0,0,0,0.8);  
-  }
-  
-  #signup {
-    height: auto;
-    padding-bottom: 20px;
-     
-  }
+#space{
+  box-sizing: border-box;
+border-radius: 10px;
+}
+#space > div {
+position: absolute;
+top:50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 500px;
+margin: auto;
+border-radius: 10px;
+font-family: 'Roboto', sans-serif;
+box-sizing: border-box;
+border-radius: 10px;
+box-shadow: 0 15px 25px rgba(0,0,0,.5);
+display: flex;
+flex-direction: column;
 
 
-  
-  #login {
-    height: auto;
-    padding-bottom: 20px;
-    width: auto;
-    
-  }
-  
-  .teal {
-    background-color: rgba(0,0,0,0.8);
-  }
-  
-  #buttons {
-    height: 75px;
-    /* background: #2c3e50; */
-    background-color: rgba(0,0,0,0.8);
+}
 
-    
-  }
-  
-  #buttons > p {
-    width: 49.95%;
-    float: left;
-    color: white;
-    text-align: center;
-    padding-top: 20px;
-    height: 60%;
-    margin: 0;
-  }
-  
-  #buttons > p:hover {
-   
-    cursor: pointer;
-  }
-  
-  #signup > input, #signup > button {
-    margin-top: 20px;
-    margin-left: 105px;
-    height: 30px;
-    border: none;
-    border-radius: 2px;
-    padding:8px;
-    animation-fill-mode: forwards;
-  }
+#signup, #login {
+width: 100%;
+/* background: #78c9b1; */
+background: rgba(0,0,0,0.8);  
+}
 
-  #signup > button{
-    background-color: black;
-    font-size: 15px;
-    color: white;
-    height: 35px;
-    width: 80px;
-  }
-  
-  #first, #last, #confirm {
-    width: 250px;
-    border-radius: 2px;
-    padding:8px;
+#signup {
+height: auto;
+padding-bottom: 20px;
 
-  }
-  
-  #email {
-    width: 250px;
-    border-radius: 2px;
-    border: none;
-    padding:8px;
+}
 
-  }
-  
-  #password {
-    width: 250px;
-    border-radius: 2px;
-    border: none;
-    padding:8px;
 
-    /* margin-left: 6px !important; */
-  }
-  
-  #login > #email, #login > #password, #login > button {
-    width: 250px;
-    margin-left: 125px !important;
-    margin-top: 20px;
-    height: 25px;
-    border-radius: 2px;
-    border: none;
-    
-  }
 
-  #login > button{
-      background-color: black;
-      font-size: 15px;
-      color: white;
-      height: 35px;
-      width: 70px;
-  }
-  
+#login {
+height: auto;
+padding-bottom: 20px;
+width: auto;
+
+}
+
+.teal {
+background-color: rgba(0,0,0,0.8);
+}
+
+#buttons {
+height: 75px;
+/* background: #2c3e50; */
+background-color: rgba(0,0,0,0.8);
+
+
+}
+
+#buttons > p {
+width: 49.95%;
+float: left;
+color: white;
+text-align: center;
+padding-top: 20px;
+height: 60%;
+margin: 0;
+}
+
+#buttons > p:hover {
+
+cursor: pointer;
+}
+
+#signup > input, #signup > button {
+margin-top: 20px;
+margin-left: 105px;
+height: 30px;
+border: none;
+border-radius: 2px;
+padding:8px;
+animation-fill-mode: forwards;
+}
+
+#signup > button{
+background-color: black;
+font-size: 15px;
+color: white;
+height: 35px;
+width: 80px;
+}
+
+#first, #last, #confirm {
+width: 250px;
+border-radius: 2px;
+padding:8px;
+
+}
+
+#email {
+width: 250px;
+border-radius: 2px;
+border: none;
+padding:8px;
+
+}
+
+#password {
+width: 250px;
+border-radius: 2px;
+border: none;
+padding:8px;
+
+/* margin-left: 6px !important; */
+}
+
+#login > #email, #login > #password, #login > button {
+width: 250px;
+margin-left: 125px !important;
+margin-top: 20px;
+height: 25px;
+border-radius: 2px;
+border: none;
+
+}
+
+#login > button{
+background-color: black;
+font-size: 15px;
+color: white;
+height: 35px;
+width: 70px;
+}

@@ -19,7 +19,7 @@ export default class StudyBuddy extends React.Component {
     return (
       <div>
       <Header />
-       <Signup />
+      <Signup />
       </div>
     );
   }

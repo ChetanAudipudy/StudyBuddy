@@ -1,18 +1,22 @@
 import React from 'react';
-import Header from './Header'
+import Header from './Header';
 
-var Parent  = React.createClass({
-    getInitialState:function(){
-      return {signup:false,login:true}
-    },
-    switch:function(word){
+class Parent extends React.Component{
+
+      state = {
+                  signup:false,
+                  login:true
+            };
+ 
+    renderSwitch = (word) => {
       var signup,login;
-      if(word == "login"){signup = false;login = true;}
+      if(word == "login")
+      {signup = false;login = true;}
       else{login = false; signup = true;}
       return this.setState({login:login,signup:signup})
       
-    },
-    render:function(){
+    }
+    render(){
       
           var self = this;
           return (
@@ -20,8 +24,8 @@ var Parent  = React.createClass({
                 <div>
                 
                         <div id="buttons">
-                        <p id="loginButton" onClick={self.switch.bind(null,"login")} className={self.state.login ? "teal":"blue"}> Login</p>
-                        <p id="signupButton" onClick={self.switch.bind(null,"signup")} className={self.state.signup ? "teal":"blue"}>Sign Up!</p>
+                        <p id="loginButton" onClick={self.renderSwitch.bind(null,"login")} className={self.state.login ? "teal":"blue"}> Login</p>
+                        <p id="signupButton" onClick={self.renderSwitch.bind(null,"signup")} className={self.state.signup ? "teal":"blue"}>Sign Up!</p>
 
                         </div>
                 
@@ -34,13 +38,11 @@ var Parent  = React.createClass({
       
       
     }
-  })
-  
-  
-  var Signup = React.createClass({
+  }
+
+  class Signup extends React.Component {
     
-    
-        render:function(){
+        render() {
           
           
               return (
@@ -59,10 +61,10 @@ var Parent  = React.createClass({
               
               )
         }
-  })
+  }
   
-  var Login = React.createClass({
-        render:function(){
+  class Login extends React.Component {
+        render(){
           
           
           
@@ -80,6 +82,7 @@ var Parent  = React.createClass({
                 
               )
         }
-  })
+  }
   
 export default Parent;
+

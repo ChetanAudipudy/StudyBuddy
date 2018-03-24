@@ -1,0 +1,15 @@
+
+.nav-bar .nav-flex{
+    display: flex;
+    justify-content: space-around;
+}
+.nav-bar .nav-title{
+    color: #7ac36e ;
+
+}
+.nav-bar > .nav-flex > .nav-bar-btn{
+    color: white;
+    background-color: linear-gradient(to right, #7ac36e , #78c9b1 );
+}
+
+/* background:  */

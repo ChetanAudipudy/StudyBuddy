@@ -19,7 +19,7 @@ app.use(routes);*/
 setTimeout(function() { reload(app); }, 5000);
 
 // loads static files
-app.use(express.static("./public"));
+app.use(express.static("./public/"));
 
 // starts Express.js server
 app.listen(PORT, function() {

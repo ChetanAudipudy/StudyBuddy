@@ -2,10 +2,10 @@ import React from 'react';
 
 class UserLogin extends React.Component{
 
-      state = {
-                  signup:false,
-                  login:true
-            };
+  state = {
+    signup: false,
+    login: true
+  };
 
   renderSwitch = (word) => {
     var signup, login;
@@ -21,7 +21,7 @@ class UserLogin extends React.Component{
     return this.setState({login: login, signup: signup})
   }
 
-  render(){
+  render() {
     var self = this;
     return (
       <div id="space">
@@ -71,4 +71,3 @@ class Login extends React.Component {
 }
 
 export default UserLogin;
-

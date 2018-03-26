@@ -1,26 +1,16 @@
 import React from 'react';
-import Header from './Header';
-import Signup from './Signup';
+import ReactDOM from 'react-dom';
+import {BrowserRouter , Route} from 'react-router-dom';
+import LandingPage from './LandingPage';
+import Dashboard from './dashboard';
 
 
-export default class StudyBuddy extends React.Component {
-
-  componentDidMount() {
-    console.log("component did mount.")
-  }
-  componentDidUpdate(prevProps, prevState) {
-    console.log("component did update.")
-  }
-  componentWillUnmount() {
-    console.log('componentWillUnmount');
-  }
-  render() {
-
-    return (
-      <div>
-      <Header />
-      <Signup />
-      </div>
-    );
-  }
-}
+const StudyBuddy = ()=> (
+  <BrowserRouter>
+   <div>
+      <Route path="/" component ={LandingPage} exact={true} />
+      <Route path="/dashboard" component ={Dashboard} />     
+   </div>
+  </BrowserRouter>
+)
+ export default StudyBuddy;

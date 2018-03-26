@@ -1,7 +1,6 @@
 import React from 'react';
-import Header from './Header';
 
-class Parent extends React.Component{
+class UserLogin extends React.Component{
 
       state = {
                   signup:false,
@@ -84,5 +83,5 @@ class Parent extends React.Component{
         }
   }
   
-export default Parent;
+export default UserLogin;
 

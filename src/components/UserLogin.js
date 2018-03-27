@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter , Route, Switch, Link} from 'react-router-dom';
 
 class UserLogin extends React.Component{
 
@@ -49,7 +51,7 @@ class Signup extends React.Component {
           <input type="email" id="email" placeholder="email"/>
           <input type="password" id="password" placeholder="password"/>
           <input type="password" id="confirm" placeholder="confirm password"/>
-          <button id="send">sign me up!</button>
+          <Link to ='/'><button id="send">sign me up!</button></Link>
         </div>
       </div>
     )
@@ -63,7 +65,7 @@ class Login extends React.Component {
         <div id="login">
           <input type="email" id="email" placeholder="email"/>
           <input type="password" id="password" placeholder="password"/>
-          <button id="send">log me in!</button>
+          <Link to='/dashboard'><button id="send">log me in!</button></Link>
       </div> 
     </div>
     )

@@ -8,6 +8,7 @@ const Flashcards = (props) => {
 
             <div>
              <h2>Here are your flashcards</h2>
+             <div className='flashcard-panel'>
              {props.flashcards.map((card) => (
                 <Flashcard 
                  key={card}
@@ -15,6 +16,7 @@ const Flashcards = (props) => {
                 />
              ))
             }
+            </div>
             </div>
         )
 }

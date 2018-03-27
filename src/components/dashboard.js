@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from './Navbar';
 import UserInfoPanel from './UserInfoPanel';
 import Flashcards from './flashcards';
-import AddFlashCard from './AddFlashCard'
+import AddFlashCard from './AddFlashCard';
 
 export default class Dashboard extends React.Component{
     state = {

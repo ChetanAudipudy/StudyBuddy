@@ -9,7 +9,7 @@ const Header = (props) => {
 };
 
 Header.defaultProps = {
-  title: 'Study Buddy!',
+  title: 'StudyBuddy',
   subtitle: 'Learn using these flash cards!'
 };
 

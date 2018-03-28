@@ -1,0 +1,75 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter , Route, Switch, Link} from 'react-router-dom';
+
+class UserLogin extends React.Component{
+
+  state = {
+    signup: false,
+    login: true
+  };
+
+  renderSwitch = (word) => {
+    var signup, login;
+
+    if (word == "login") {
+      signup = false;
+      login = true;
+    } else {
+      login = false; 
+      signup = true;
+    }
+    
+    return this.setState({login: login, signup: signup})
+  }
+
+  render() {
+    var self = this;
+    return (
+      <div id="space">
+        <div>
+          <div id="buttons">
+            <p id="loginButton" onClick={self.renderSwitch.bind(null,"login")} className={self.state.login ? "main" : "sideline"}>login</p>
+            <p id="signupButton" onClick={self.renderSwitch.bind(null,"signup")} className={self.state.signup ? "main" : "sideline"}>sign up</p>
+          </div>
+        
+          {self.state.signup ? <Signup/> : null}
+          {self.state.login ? <Login /> : null}
+        </div>
+      </div>
+    )
+  }
+}
+
+class Signup extends React.Component {
+  render() {
+    return (
+      <div>     
+        <div id="signup">
+          <input type="text" id="first" placeholder="first name"/>
+          <input type="text" id="last" placeholder="last name"/>
+          <input type="email" id="email" placeholder="email"/>
+          <input type="password" id="password" placeholder="password"/>
+          <input type="password" id="confirm" placeholder="confirm password"/>
+          <Link to ='/'><button id="send">sign me up!</button></Link>
+        </div>
+      </div>
+    )
+  }
+}
+  
+class Login extends React.Component {
+  render(){
+    return (
+      <div>           
+        <div id="login">
+          <input type="email" id="email" placeholder="email"/>
+          <input type="password" id="password" placeholder="password"/>
+          <Link to='/dashboard'><button id="send">log me in!</button></Link>
+      </div> 
+    </div>
+    )
+  }
+}
+
+export default UserLogin;

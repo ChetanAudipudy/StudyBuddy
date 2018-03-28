@@ -13,5 +13,6 @@
     "public/",
     "server.js",
     "package.json"
-  ]
+  ],
+  "ext": "js json css html"
 }

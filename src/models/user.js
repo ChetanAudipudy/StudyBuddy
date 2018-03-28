@@ -37,6 +37,7 @@ var User = sequelize.define("user", {
         len: [1,100]
       }
     }
+
   }, {
     timestamps: false
   });

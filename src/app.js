@@ -8,4 +8,6 @@ import '../src/styles/components/Header.css';
 import '../src/styles/components/Appbar.css';
 import './styles/components/flashcards.css'
 
-ReactDOM.render(<StudyBuddy /> , document.getElementById('app'));
+
+
+ReactDOM.render(<StudyBuddy />, document.getElementById('app'));

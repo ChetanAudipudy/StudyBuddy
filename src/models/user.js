@@ -37,16 +37,10 @@ var User = sequelize.define("user", {
         len: [1,100]
       }
     }
+
+  }, {
+    timestamps: false
   });
-
-
-  // User.prototype.generateHash = function(password) {
-  //   return bcrypt.hash(password, bcrypt.genSaltSync(8));
-  // };
-
-  // User.prototype.validatePassword = function(password) {
-  //   return bcrypt.compare(password, this.password);
-  // };
 
   return User;
 };

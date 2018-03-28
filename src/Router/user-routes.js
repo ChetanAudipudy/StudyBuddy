@@ -33,7 +33,7 @@ module.exports = function(app) {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
-        password: pass,
+        password: pass
       }).then(function(result){
         res.json(result);
       });

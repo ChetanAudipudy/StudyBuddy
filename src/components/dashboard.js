@@ -6,6 +6,8 @@ import AddFlashCard from './AddFlashCard';
 
 export default class Dashboard extends React.Component{
     state = {
+
+        firstName: '',
         flashcards: ['flashcard 1' , 'flashcard 2' , 'flashcard 3']
     }
 
@@ -16,11 +18,38 @@ export default class Dashboard extends React.Component{
         }))
     }
 
+    componentDidMount(){
+        let self = this;
+        fetch('/api/users', {
+            // headers : { 
+            //     'Content-Type': 'application/json',
+            //     'Accept': 'application/json'
+            // }, 
+            method: 'GET'
+           
+        }).then(function(response) {
+            if (response.status >= 400) {
+                throw new Error("Bad response from server");
+            }
+            console.log(response);
+            var data = JSON.stringify(response);
+            console.log(data);
+            return response.json();
+        }).then(function(data) {
+            console.log(data);
+            self.setState({
+                firstName: data[0].firstName
+            });
+        }).catch(err => {
+        console.log('caught it!',err);
+        })
+    }
+
     
     render(){
         return(
             <div>
-            <UserInfoPanel />
+            <UserInfoPanel firstName={this.state.firstName}/>
             <Flashcards 
              flashcards = {this.state.flashcards}
              

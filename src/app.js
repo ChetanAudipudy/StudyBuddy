@@ -6,4 +6,5 @@ import '../src/styles/components/Signup.css';
 import '../src/styles/components/Header.css';
 
 
+
 ReactDOM.render(<StudyBuddy />, document.getElementById('app'));

@@ -7,21 +7,29 @@ var reload = require("reload");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+var db = require("./src/models");
+
 // sets up data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//loads static files
+app.use(express.static("./public"));
+
 // imports routes
 /*var routes = require("./controllers/CONTROLLERNAME.js");
 app.use(routes);*/
+require("./src/routes/user-routes.js")(app);
 
 // enables reloading
 setTimeout(function() { reload(app); }, 5000);
 
-// loads static files
-app.use(express.static("./public"));
+
+
 
 // starts Express.js server
-app.listen(PORT, function() {
-	console.log("This app is listening on PORT: " + PORT + ".");
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });

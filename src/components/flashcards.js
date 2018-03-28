@@ -1,9 +1,26 @@
 import React from 'react';
+import Flashcard from './flashcard';
 
-export default class Flashcards extends React.Component{
-    render(){
+
+const Flashcards = (props) => {
+ 
         return(
-            <div>Flashcards go here</div>
+
+            <div>
+             <h2>Here are your flashcards</h2>
+             <div className='flashcard-panel'>
+             {props.flashcards.map((card) => (
+                <Flashcard 
+                 key={card}
+                 flashcardText = {card}
+                />
+             ))
+            }
+            </div>
+            </div>
         )
-    }
-};
+}
+
+
+
+export default Flashcards;

@@ -46,7 +46,7 @@ export default class Dashboard extends React.Component{
     render() {
         return (
             <div>
-	            <Navbar />
+	            <Navbar firstName={this.state.firstName}/>
 
 	            <div className="container">
 		            <AddFlashCard 
@@ -56,15 +56,6 @@ export default class Dashboard extends React.Component{
 		             flashcards = {this.state.flashcards}
 		            />
 		        </div>
-
-            <Navbar firstName={this.state.firstName}/>
-            <Flashcards 
-             flashcards = {this.state.flashcards}
-             
-            />
-            <AddFlashCard 
-            handleAddFlashcard = {this.handleAddFlashcard}
-            />
             </div>
         );
     }

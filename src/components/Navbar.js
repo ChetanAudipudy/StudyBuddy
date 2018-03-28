@@ -1,35 +1,68 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
-import Button from 'material-ui/Button';
-import IconButton from 'material-ui/IconButton';
-import Grid from 'material-ui/Grid';
-// import MenuIcon from 'material-ui-icons/Menu';
+import ReactDOM from 'react-dom';
+import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 
-function Navbar(props) {
+class Navbar extends React.Component {
+  state = {
+      title: 'StudyBuddy',
+      firstName: 'Peter'
+  };
 
-  return (
-    <div>
-      <AppBar position="fixed" className="nav-bar" color="default">
-        <Toolbar className="nav-flex">
-        <Grid item xs="10">
-          <Typography variant="title" className="nav-title">
-            Study Buddy!
-          </Typography>
-          </Grid>
-          <Grid item xs="2" className="nav-flex">
-          <Button variant="raised" id="btn" className="nav-bar-btn">Login</Button>
-          <Button variant="raised" className="nav-bar-btn">Sign Up</Button>
-          </Grid>
-        </Toolbar>
-      </AppBar>
-    </div>
-  );
+  // componentDidMount(){
+  //     let self = this;
+  //     fetch('/api/users', {
+  //         method: 'GET'
+  //     }).then(function(response) {
+  //         if (response.status >= 400) {
+  //             throw new Error("Bad response from server");
+  //         }
+  //         return response.json();
+  //     }).then(function(data) {
+  //         self.setState({
+  //             firstName: data.firstName
+  //         });
+  //     }).catch(err => {
+  //     console.log('caught it!',err);
+  //     })
+  // }
+
+  getInitialState() {
+    return { showMenu: false };
+  }
+
+  onClick() {
+    if (this.state.showMenu == true) {
+      this.setState({ showMenu: false });
+    } else {
+      this.setState({ showMenu: true });
+    }
+  }
+
+  render() {
+    return (
+      <div className="navbar navbar-light">
+        <h1 className="logo-dark">{this.state.title}</h1>
+        <button className="white-button" id="collapse" onClick={this.onClick.bind(this)}>&equiv;</button>
+        <div className="nav-right">
+          <p className="welcome">welcome back, {this.state.firstName}!</p>
+          <Link to ='/dashboard'><button id="study" className="gradient-button nav-button">study</button></Link>
+          <Link to ='/'><button id="log out" className="gradient-button nav-button">log out</button></Link>
+        </div>
+        { this.state.showMenu ? <Opened /> : null }
+      </div>
+    );
+  }
+};
+
+class Opened extends React.Component {
+  render() {
+    return (
+      <div className="nav-opened">
+        <Link to ='/dashboard'><button id="study" className="gradient-button nav-button">study</button></Link>
+        <Link to ='/'><button id="log out" className="gradient-button nav-button">log out</button></Link>
+      </div>
+    );
+  }
 }
-
-
 
 export default Navbar;

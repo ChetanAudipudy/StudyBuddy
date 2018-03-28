@@ -1,26 +1,33 @@
 import React from 'react';
 import Flashcard from './flashcard';
 
-
 const Flashcards = (props) => {
  
-        return(
+    return (
+        <div className="row">
+            <h2 className="subheading">continue studying...</h2>
+            <div className="flashcard-panel">
+                 { props.flashcards.map((card) => (
+                    <Flashcard 
+                     key={card}
+                     flashcardText = {card}
+                     cardLink = './setpage'
+                    />
+                 ))}
+            </div>
 
-            <div>
-             <h2>Here are your flashcards</h2>
-             <div className='flashcard-panel'>
-             {props.flashcards.map((card) => (
-                <Flashcard 
-                 key={card}
-                 flashcardText = {card}
-                />
-             ))
-            }
+            <h2 className="subheading">browse all</h2>
+            <div className="flashcard-panel">
+                 { props.flashcards.map((card) => (
+                    <Flashcard 
+                     key={card}
+                     flashcardText = {card}
+                     cardLink = './setpage'
+                    />
+                 ))}
             </div>
-            </div>
-        )
+        </div>
+    )
 }
-
-
 
 export default Flashcards;

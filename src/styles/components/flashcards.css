@@ -1,5 +1,70 @@
-.flashcard-panel{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+/* ------------------------------------ FORM */
+
+div#addCardForm {
+	margin-top: 100px;
+	width: 100%;
+}
+
+form {
+	display: inline-block;
+	width: 100%;
+	margin: 0px auto;
+	text-align: center;
+}
+
+input#cardname {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+button#addCard {
+	display: inline-block;
+	margin-bottom: 25px;
+	padding: 5px 20px;
+}
+
+/* ------------------------------------ FLASHCARDS */
+
+div.flashcard-panel {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+div.cardbox {
+	display: inline-block;
+	overflow: hidden;
+	padding: 10px;
+	background: transparent;
+}
+
+div.card {
+	padding: 25px;
+	border: none;
+	border-radius: 10px;
+	min-height: 250px;
+	background-image: url("http://i0.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+button.card-title {
+	position: absolute;
+	bottom: 10px;
+	padding: 5px 15px;
+	border-radius: 25px;
+}
+
+button.delete {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 5px 13px;
+	border-radius: 100px;
+}
+
+button.delete:hover {
+	background: #ffffff;
+	color: #78c9b1;
 }

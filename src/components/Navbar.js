@@ -5,26 +5,8 @@ import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 class Navbar extends React.Component {
   state = {
       title: 'StudyBuddy',
-      firstName: 'Peter'
+      firstName: ''
   };
-
-  // componentDidMount(){
-  //     let self = this;
-  //     fetch('/api/users', {
-  //         method: 'GET'
-  //     }).then(function(response) {
-  //         if (response.status >= 400) {
-  //             throw new Error("Bad response from server");
-  //         }
-  //         return response.json();
-  //     }).then(function(data) {
-  //         self.setState({
-  //             firstName: data.firstName
-  //         });
-  //     }).catch(err => {
-  //     console.log('caught it!',err);
-  //     })
-  // }
 
   getInitialState() {
     return { showMenu: false };

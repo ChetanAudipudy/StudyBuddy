@@ -8,6 +8,7 @@ import '../src/styles/components/UserLogin.css';
 import '../src/styles/components/Navbar.css';
 import './styles/components/flashcards.css';
 import './styles/components/About.css';
+import './styles/components/Add.css';
 import './styles/components/questions.css';
 
 ReactDOM.render(<StudyBuddy />, document.getElementById('app'));

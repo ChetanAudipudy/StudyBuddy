@@ -11,6 +11,7 @@ const Flashcards = (props) => {
                     <Flashcard 
                      key={card}
                      flashcardText = {card}
+                     handleDeleteButton = {props.handleDeleteButton}
                      cardLink = './setpage'
                     />
                  ))}

@@ -12,7 +12,7 @@ module.exports = function(app) {
   app.post("/api/users", function(req, res) {
     var password = "";
     var confirmPassword = "";
-
+    console.log("password ", req.body);
     if(req.body.password !== req.body.confirmPassword){
       throw new Error("Passwords must match!");
     }
@@ -22,6 +22,7 @@ module.exports = function(app) {
     }
 
     function hashing() {
+      
       var saltRounds = 10;
       var salt = bcrypt.genSaltSync(saltRounds);
       var password = bcrypt.hashSync(req.body.password, salt);

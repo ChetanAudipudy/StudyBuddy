@@ -16,6 +16,14 @@ export default class Dashboard extends React.Component{
         }))
     }
 
+    handleDeleteButton = (flashcardToRemove) => {
+        this.setState((prevState) => ({
+            flashcards: prevState.flashcards.filter((flashcard) => flashcardToRemove !== flashcard)
+        }))
+        console.log("delete button clicked");
+        console.log("flashcard array" , this.state.flashcards);
+    }
+
     componentDidMount() {
         let self = this;
         fetch('/api/users', {
@@ -53,7 +61,8 @@ export default class Dashboard extends React.Component{
 		            handleAddFlashcard = {this.handleAddFlashcard}
 		            />
 		            <Flashcards 
-		             flashcards = {this.state.flashcards}
+                     flashcards = {this.state.flashcards} 
+                     handleDeleteButton = {this.handleDeleteButton}
 		            />
 		        </div>
             </div>

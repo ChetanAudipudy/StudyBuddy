@@ -20,6 +20,7 @@ app.use(express.static("./public"));
 /*var routes = require("./controllers/CONTROLLERNAME.js");
 app.use(routes);*/
 require("./src/routes/user-routes.js")(app);
+require("./src/routes/api-routes.js")(app);
 
 // enables reloading
 setTimeout(function() { reload(app); }, 5000);

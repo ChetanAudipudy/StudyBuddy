@@ -129,10 +129,12 @@ class Login extends React.Component {
   console.log("response: " , response)
     if (response.status >= 400) {
       throw new Error("Bad response from server");
-    }
+    }else if(response.status === 200){
     history.push('/dasboard');
+    }else{
     return response.json();
     console.log("login response" , response.json());
+    }
 }).catch(function(err) {
     console.log(err)
 });
@@ -144,7 +146,7 @@ class Login extends React.Component {
         <div id="login">
           <input type="email" id="email" placeholder="email" name="email" onChange={this.handleChange}/>
           <input type="password" id="password" placeholder="password" name="password" onChange={this.handleChange}/>
-          <Link to ='/dashboard'><button id="login-send" className="send" onClick={this.handleLogin}>log me in!</button></Link>
+         <Link to='/dashboard'><button id="login-send" className="send" onClick={this.handleLogin}>log me in!</button></Link>
       </div> 
     </div>
     );

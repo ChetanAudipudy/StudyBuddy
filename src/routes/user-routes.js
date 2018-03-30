@@ -4,7 +4,7 @@ var bcrypt = require('bcrypt');
 
 module.exports = function(app) {
   app.get("/api/users", function(req, res) {
-    db.user.findAll({}).then(function(result){
+    db.User.findAll({}).then(function(result){
       res.json(result);
     });
   });
@@ -29,7 +29,7 @@ module.exports = function(app) {
     }
 
     function createUser(pass) {
-      db.user.findOrCreate({
+      db.User.findOrCreate({
         where: {
           email: req.body.email,
         },
@@ -56,10 +56,15 @@ module.exports = function(app) {
 
      var users = [];
      
-     db.user.findAll({}).then(function(result) {
+     db.User.findAll({}).then(function(result) {
+
+     
 
         users = JSON.parse(JSON.stringify(result));
-
+        if(req.body === undefined){
+          res.json(new Error("User not found"));
+        }
+        
         for(var i = 0; i < users.length; i++){
           if(req.body.email === users[i].email && bcrypt.compareSync(req.body.password, users[i].password)){
             return res.json(users[i]);

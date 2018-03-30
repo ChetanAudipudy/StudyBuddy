@@ -7,6 +7,7 @@ var reload = require("reload");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+// initializes Sequelize models
 var db = require("./src/models");
 
 // sets up data parsing
@@ -17,16 +18,8 @@ app.use(bodyParser.json());
 app.use(express.static("./public"));
 
 // imports routes
-/*var routes = require("./controllers/CONTROLLERNAME.js");
-app.use(routes);*/
 require("./src/routes/user-routes.js")(app);
 require("./src/routes/api-routes.js")(app);
-
-// enables reloading
-setTimeout(function() { reload(app); }, 5000);
-
-
-
 
 // starts Express.js server
 db.sequelize.sync().then(function() {

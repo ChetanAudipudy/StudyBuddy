@@ -1,19 +1,17 @@
 import React from 'react';
 import Navbar from './Navbar';
-import AddFlashCard from './AddFlashCard';
 import Flashcards from './flashcards';
 
 export default class Dashboard extends React.Component{
     state = {
         firstName: '',
-        flashcards: ['flashcard 1' , 'flashcard 2' , 'flashcard 3']
-    }
-
-    handleAddFlashcard = (flashcard) => {
-
-        this.setState((prevState) => ({
-            flashcards : prevState.flashcards.concat(flashcard)
-        }))
+        flashcards: [
+        {name: 'vocabulary', bg: 'card-vocab'},
+        {name: 'reading', bg: 'card-reading'},
+        {name: 'astronomy', bg: 'card-astro'},
+        {name: 'chemistry', bg: 'card-chem'},
+        {name: 'math', bg: 'card-math'}
+        ]
     }
 
     handleDeleteButton = (flashcardToRemove) => {
@@ -47,7 +45,7 @@ export default class Dashboard extends React.Component{
                 firstName: data[0].firstName
             });
         }).catch(err => {
-            console.log('caught it!',err);
+            console.log('caught it!', err);
         })
     }
     
@@ -57,9 +55,6 @@ export default class Dashboard extends React.Component{
 	            <Navbar firstName={this.state.firstName}/>
 
 	            <div className="container">
-		            <AddFlashCard 
-		            handleAddFlashcard = {this.handleAddFlashcard}
-		            />
 		            <Flashcards 
                      flashcards = {this.state.flashcards} 
                      handleDeleteButton = {this.handleDeleteButton}

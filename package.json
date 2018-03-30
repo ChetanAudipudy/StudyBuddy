@@ -21,10 +21,10 @@
     "babel-preset-react": "6.24.1",
     "bcrypt": "^1.0.3",
     "body-parser": "^1.18.2",
+    "classnames": "^2.2.5",
     "express": "^4.16.3",
     "fs": "0.0.1-security",
     "live-server": "^1.2.0",
-    "material-ui": "^1.0.0-beta.38",
     "mysql2": "^1.5.3",
     "node": "^9.9.0",
     "nodemon": "^1.17.2",
@@ -40,7 +40,6 @@
   },
   "devDependencies": {
     "css-loader": "^0.28.11",
-    "reload": "^2.2.2",
     "style-loader": "^0.20.3"
   }
 }

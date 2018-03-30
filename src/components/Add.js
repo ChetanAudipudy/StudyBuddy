@@ -55,6 +55,7 @@ export default class QuestionPage extends React.Component {
                       <input className="addnew" type="text" id="setname"  placeholder="name"/>
                       <input className="addnew" type="text" id="setsubject" name="unitName" onChange={this.handleChange} placeholder="subject"/>
                       <input className="addnew largetext" type="text" id="description" name="description" onChange={this.handleChange} placeholder="description"/>
+                      <input className="addnew" type="text" id="setbg"  placeholder="background image url"/>
                     </div>
                       
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -133,7 +134,7 @@ export default class QuestionPage extends React.Component {
                     </div>
 
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                      <button className="white-button oversized" id="submit" className="send" onClick={this.handleButton}>create my flashcard set!</button>
+                      <button className="white-button send oversized" id="submit" onClick={this.handleButton}>create my flashcard set!</button>
                     </div>
                   </div>
                 </div>

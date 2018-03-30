@@ -44,5 +44,5 @@ button.oversized {
     margin-top: 25px;
     padding: 10px 30px;
     font-size: 30px;
-    border-radius: 50px;
+    border-radius: 50px !important;
 }

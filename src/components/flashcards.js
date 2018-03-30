@@ -1,31 +1,33 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 import Flashcard from './flashcard';
+import AddFlashCard from './AddFlashCard';
 
 const Flashcards = (props) => {
+
+    /*handleAddFlashcard = (flashcard) => {
+        this.setState((prevState) => ({
+            flashcards : prevState.flashcards.concat(flashcard)
+        }))
+    }*/
  
     return (
         <div className="row">
-            <h2 className="subheading">continue studying...</h2>
+            <h2 className="subheading dashboard">continue studying...</h2>
             <div className="flashcard-panel">
-                 { props.flashcards.map((card) => (
-                    <Flashcard 
-                     key={card}
-                     flashcardText = {card}
-                     handleDeleteButton = {props.handleDeleteButton}
-                     cardLink = './setpage'
+                <AddFlashCard 
+                    /*handleAddFlashcard = {this.handleAddFlashcard}*/
                     />
-                 ))}
-            </div>
-
-            <h2 className="subheading">browse all</h2>
-            <div className="flashcard-panel">
-                 { props.flashcards.map((card) => (
+                {props.flashcards.map((card) => (
                     <Flashcard 
-                     key={card}
-                     flashcardText = {card}
-                     cardLink = './setpage'
+                    key = {card.name}
+                    flashcardText = {card.name}
+                    flashcardBg = {card.bg}
+                    handleDeleteButton = {props.handleDeleteButton}
+                    cardLink = './setpage'
                     />
-                 ))}
+                ))}
             </div>
         </div>
     )

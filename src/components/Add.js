@@ -5,7 +5,8 @@ export default class QuestionPage extends React.Component {
 
     state = {
       unitName: '',
-      description: ''
+      description: '',
+      UserId: localStorage.getItem('UserId')
     }
 
     handleChange = (e) => {
@@ -17,7 +18,8 @@ export default class QuestionPage extends React.Component {
       e.preventDefault();
       var data = {
         unitName: this.state.unitName,
-        description: this.state.description
+        description: this.state.description,
+        UserId: this.state.UserId
       }  
       console.log(data);
       fetch("/api/units", {

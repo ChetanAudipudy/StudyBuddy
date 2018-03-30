@@ -42,6 +42,7 @@ export default class Dashboard extends React.Component{
         }).then(function(data) {
             console.log(data);
             localStorage.setItem('userName', data[0].firstName);
+            localStorage.setItem('UserId', data[0].id);
             self.setState({
                 firstName: data[0].firstName
             });

@@ -19,7 +19,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <div className="navbar navbar-light">
-        <h1 className="logo-dark">{this.props.title}</h1>
+        <h1 className="logo-dark">{this.state.title}</h1>
         <button className="white-button" id="collapse" onClick={this.onClick.bind(this)}>&equiv;</button>
         <div className="nav-right">
           <p className="welcome">welcome back, {this.props.firstName}!</p>

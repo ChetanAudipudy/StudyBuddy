@@ -2,6 +2,39 @@ import React from 'react';
 import Navbar from './Navbar';
 
 export default class QuestionPage extends React.Component {
+
+    state = {
+      unitName: '',
+      description: ''
+    }
+
+    handleChange = (e) => {
+      e.preventDefault();
+      this.setState({ [e.target.name]: e.target.value });
+    }
+
+    handleButton = (e) =>{
+      e.preventDefault();
+      var data = {
+        unitName: this.state.unitName,
+        description: this.state.description
+      }  
+      console.log(data);
+      fetch("/api/units", {
+        method: 'POST',
+        headers: {'Accept': 'application/json',
+        'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    }).then(function(response) {
+      console.log(response);
+        if (response.status >= 400) {
+          throw new Error("Bad response from server");
+        }
+        return response.json();
+    }).catch(function(err) {
+        console.log(err)
+    });
+  }
     
     render() {
         return (
@@ -19,9 +52,9 @@ export default class QuestionPage extends React.Component {
                     </div>
 
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                      <input className="addnew" type="text" id="setname" placeholder="name"/>
-                      <input className="addnew" type="text" id="setsubject" placeholder="subject"/>
-                      <input className="addnew largetext" type="text" id="description" placeholder="description"/>
+                      <input className="addnew" type="text" id="setname"  placeholder="name"/>
+                      <input className="addnew" type="text" id="setsubject" name="unitName" onChange={this.handleChange} placeholder="subject"/>
+                      <input className="addnew largetext" type="text" id="description" name="description" onChange={this.handleChange} placeholder="description"/>
                     </div>
                       
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -100,7 +133,7 @@ export default class QuestionPage extends React.Component {
                     </div>
 
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                      <button className="white-button oversized" id="submit">create my flashcard set!</button>
+                      <button className="white-button oversized" id="submit" className="send" onClick={this.handleButton}>create my flashcard set!</button>
                     </div>
                   </div>
                 </div>

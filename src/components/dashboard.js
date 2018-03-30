@@ -4,8 +4,8 @@ import Flashcards from './flashcards';
 
 export default class Dashboard extends React.Component{
     state = {
-        firstName: '',
-        id: 0,
+        firstName: localStorage.getItem('user'),
+        id: localStorage.getItem('id'),
         flashcards: [
         {name: 'vocabulary', bg: 'card-vocab'},
         {name: 'reading', bg: 'card-reading'},
@@ -24,38 +24,38 @@ export default class Dashboard extends React.Component{
   }
 
     componentDidMount() {
-        // let self = this;
-        // fetch('/api/users', {
-        //     // headers : { 
-        //     //     'Content-Type': 'application/json',
-        //     //     'Accept': 'application/json'
-        //     // }, 
-        //     method: 'GET'
-           
-        // }).then(function(response) {
-        //     if (response.status >= 400) {
-        //         throw new Error("Bad response from server");
-        //     }
-        //     console.log(response);
-        //     var data = JSON.stringify(response);
-        //     console.log(data);
-        //     return response.json();
-        // }).then(function(data) {
-        //     console.log(data);
-        //     localStorage.setItem('userName', data[0].firstName);
-        //     localStorage.setItem('UserId', data[0].id);
-        //     self.setState({
-        //         firstName: data[0].firstName
-        //     });
+        var data = {
+            user_id:localStorage.getItem('id')
+        };
 
-
-        // }).catch(err => {
-        //     console.log('caught it!', err);
+        // this.setState({
+        //     firstName: localStorage.getItem('user'),
+        //     id: localStorage.getItem('id')
         // })
-        this.setState({
-            firstName: localStorage.getItem('user'),
-            id: localStorage.getItem('id')
-        });
+        let self = this;
+        fetch('/api/units', {
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }, 
+            method: 'POST',
+            body:JSON.stringify(data)
+
+           
+        }).then(function(response) {
+            if (response.status >= 400) {
+                throw new Error("Bad response from server");
+            }
+            console.log(response);
+            var data = JSON.stringify(response);
+            console.log(data);
+            return response.json();
+        }).then(function(data) {
+            console.log(data);
+
+        }).catch(err => {
+            console.log('caught it!', err);
+        })
     }
 
 
@@ -63,7 +63,7 @@ export default class Dashboard extends React.Component{
     render() {
         return (
             <div>
-	            <Navbar firstName={this.state.firstName}/>
+	            <Navbar firstName={localStorage.getItem('user')}/>
 
 	            <div className="container">
 		            <Flashcards 

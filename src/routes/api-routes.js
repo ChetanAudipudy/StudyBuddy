@@ -7,8 +7,13 @@ module.exports = function(app) {
 	// ---------------
 
 	// get units
-	app.get("/api/units", function(req, res) {
-		db.Unit.findAll({}).then(function(units) {
+	app.post("/api/units", function(req, res) {
+		var query = {};
+		query.UserId = req.body.user_id
+		db.Unit.findAll({
+			where: query,
+			include: [db.User]
+		}).then(function(units) {
 			res.json(units);
 		});
 	});

@@ -143,8 +143,10 @@ class Login extends React.Component {
 
 }).then(function(data){
 
+
   localStorage.setItem('id', data.id);
   localStorage.setItem('user', data.firstName);
+
 
 }).catch(function(err) {
     console.log(err)

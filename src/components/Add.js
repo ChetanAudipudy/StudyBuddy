@@ -6,7 +6,7 @@ export default class QuestionPage extends React.Component {
     state = {
       unitName: '',
       description: '',
-      UserId: localStorage.getItem('UserId')
+      UserId: localStorage.getItem('id')
     }
 
     handleChange = (e) => {
@@ -41,7 +41,7 @@ export default class QuestionPage extends React.Component {
     render() {
         return (
             <div className="fitpage">
-              <Navbar />
+              <Navbar firstName={localStorage.getItem('user')}/>
 
                 <div className="container text-center">
                   <div className="row qform">

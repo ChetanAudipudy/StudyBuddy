@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 
-export default class QuestionPage extends React.Component{
+export default class QuestionPage extends React.Component {
     state = {
         title: "Vocabulary",
         user: "Amanda Ramirez",

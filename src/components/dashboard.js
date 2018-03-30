@@ -39,7 +39,7 @@ export default class Dashboard extends React.Component{
                 firstName: data[0].firstName
             });
         }).catch(err => {
-        console.log('caught it!',err);
+            console.log('caught it!',err);
         })
     }
     

@@ -1,8 +1,10 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 
 
 export default class AddFlashCard extends React.Component {
-  state = {
+  /*state = {
     error: undefined
   };
 
@@ -16,16 +18,20 @@ export default class AddFlashCard extends React.Component {
     if (!error) {
       e.target.elements.flashcard.value = '';
     }
-  };
+  };*/
 
   render() {
     return (
-      <div className="row text-center">
+      /*<div className="row text-center">
         <div id="addCardForm">
           <form onSubmit={this.handleAddFlashcard}>
             <input type="text" name="flashcard" id="cardname"/><button className="white-button" id="addCard">add new set</button>
           </form>
         </div>
+      </div>*/
+
+      <div className="row text-center" id="addCardForm">
+        <Link to="/add"><button className="white-button" id="addCard">add new set</button></Link>
       </div>
     );
   }

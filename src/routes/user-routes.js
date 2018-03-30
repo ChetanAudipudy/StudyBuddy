@@ -42,7 +42,7 @@ module.exports = function(app) {
         var created = result[1];
 
         if(created){
-          res.json(result);
+          res.json(result[0]);
         }
         else{
           throw new Error("That email has already been used");

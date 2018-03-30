@@ -14,6 +14,11 @@ class UserLogin extends React.Component{
     confirmPassword:''
   };
 
+  componentDidMount(){
+    localStorage.setItem('user', '');
+    localStorage.setItem('id', 0);
+  }
+
  
 
   renderSwitch = (word) => {
@@ -125,20 +130,26 @@ class Login extends React.Component {
     headers: {'Accept': 'application/json',
     'Content-Type': 'application/json'},
     body: JSON.stringify(data)
+
 }).then(function(response) {
+
   console.log("response: " , response)
     if (response.status >= 400) {
       throw new Error("Bad response from server");
-    }else if(response.status === 200){
-    history.push('/dasboard');
-    }else{
-    return response.json();
-    console.log("login response" , response.json());
     }
+    var data = JSON.stringify(response);
+    console.log(data);
+    return response.json();
+
+}).then(function(data){
+
+  localStorage.setItem('id', data.id);
+  localStorage.setItem('user', data.firstName);
+
 }).catch(function(err) {
     console.log(err)
 });
- }
+}
 
   render() {
     return (

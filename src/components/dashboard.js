@@ -5,6 +5,7 @@ import Flashcards from './flashcards';
 export default class Dashboard extends React.Component{
     state = {
         firstName: '',
+        id: 0,
         flashcards: [
         {name: 'vocabulary', bg: 'card-vocab'},
         {name: 'reading', bg: 'card-reading'},
@@ -19,38 +20,42 @@ export default class Dashboard extends React.Component{
             flashcards: prevState.flashcards.filter((flashcard) => flashcardToRemove !== flashcard)
         }))
         console.log("delete button clicked");
-        console.log("flashcard array" , this.state.flashcards);
-    }
+
+  }
 
     componentDidMount() {
-        let self = this;
-        fetch('/api/users', {
-            // headers : { 
-            //     'Content-Type': 'application/json',
-            //     'Accept': 'application/json'
-            // }, 
-            method: 'GET'
+        // let self = this;
+        // fetch('/api/users', {
+        //     // headers : { 
+        //     //     'Content-Type': 'application/json',
+        //     //     'Accept': 'application/json'
+        //     // }, 
+        //     method: 'GET'
            
-        }).then(function(response) {
-            if (response.status >= 400) {
-                throw new Error("Bad response from server");
-            }
-            console.log(response);
-            var data = JSON.stringify(response);
-            console.log(data);
-            return response.json();
-        }).then(function(data) {
-            console.log(data);
-            localStorage.setItem('userName', data[0].firstName);
-            localStorage.setItem('UserId', data[0].id);
-            self.setState({
-                firstName: data[0].firstName
-            });
+        // }).then(function(response) {
+        //     if (response.status >= 400) {
+        //         throw new Error("Bad response from server");
+        //     }
+        //     console.log(response);
+        //     var data = JSON.stringify(response);
+        //     console.log(data);
+        //     return response.json();
+        // }).then(function(data) {
+        //     console.log(data);
+        //     localStorage.setItem('userName', data[0].firstName);
+        //     localStorage.setItem('UserId', data[0].id);
+        //     self.setState({
+        //         firstName: data[0].firstName
+        //     });
 
 
-        }).catch(err => {
-            console.log('caught it!', err);
-        })
+        // }).catch(err => {
+        //     console.log('caught it!', err);
+        // })
+        this.setState({
+            firstName: localStorage.getItem('user'),
+            id: localStorage.getItem('id')
+        });
     }
 
 

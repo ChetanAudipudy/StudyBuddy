@@ -14,7 +14,7 @@ export default class QuestionPage extends React.Component {
     render() {
         return (
             <div className="fitpage">
-	            <Navbar firstName = {localStorage.getItem('userName')}/>
+	            <Navbar firstName = {localStorage.getItem('user')}/>
 
                 <div className="row info">
                     <button className="white-button mini-title">{this.state.title}</button>

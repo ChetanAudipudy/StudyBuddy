@@ -3,10 +3,11 @@ import Navbar from './Navbar';
 import About from './About';
 
 export default class SetPage extends React.Component{
+
     render() {
         return(
             <div className="background example-page">
-	            <Navbar />
+	            <Navbar firstName = {localStorage.getItem('userName')}/>
                 <About />
             </div>
         )

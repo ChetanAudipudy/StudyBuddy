@@ -41,13 +41,18 @@ export default class Dashboard extends React.Component{
             return response.json();
         }).then(function(data) {
             console.log(data);
+            localStorage.setItem('userName', data[0].firstName);
             self.setState({
                 firstName: data[0].firstName
             });
+
+
         }).catch(err => {
             console.log('caught it!', err);
         })
     }
+
+
     
     render() {
         return (

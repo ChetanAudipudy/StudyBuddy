@@ -11,8 +11,9 @@ You will need to have the following Node.js packages installed prior to running 
 * JavaScript
 * jQuery
 * AJAX
+* APIs
 * Node.js / Nodemon
-* Node.js packages
+* Node.js packages (see above)
 * Express.js
 * React.js
 * MySQL

@@ -17,7 +17,7 @@ export default class Dashboard extends React.Component{
 
     }
 
-    componentWillMount() {
+    componentDidMount() {
 
         setTimeout(() => {
         var data = {

@@ -15,9 +15,11 @@ export default class Dashboard extends React.Component{
         }))
         console.log("delete button clicked");
 
-  }
+    }
 
-    componentDidMount() {
+    componentWillMount() {
+
+        setTimeout(() => {
         var data = {
             user_id:localStorage.getItem('id')
         };
@@ -53,6 +55,7 @@ export default class Dashboard extends React.Component{
         }).catch(err => {
             console.log('caught it!', err);
         })
+       }, 100) 
     }
 
 

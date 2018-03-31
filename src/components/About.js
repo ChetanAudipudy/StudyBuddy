@@ -5,7 +5,7 @@ import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 class About extends React.Component {
   state = {
     title: "Vocabulary",
-    description: "Hi",
+    description: "A simple vocab test to quiz your knowledge.",
     user: "Amanda Ramirez",
     link: "./questionpage"
   }

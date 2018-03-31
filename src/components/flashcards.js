@@ -21,8 +21,10 @@ const Flashcards = (props) => {
                     />
                 {props.flashcards.map((card) => (
                     <Flashcard 
-                    key = {card.name}
-                    flashcardText = {card.name}
+                    key = {card.unitName}
+                    id = {card.id}
+                    flashcardText = {card.unitName}
+                    flashcardD = {card.description}
                     flashcardBg = {card.bg}
                     handleDeleteButton = {props.handleDeleteButton}
                     cardLink = './setpage'

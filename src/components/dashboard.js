@@ -6,13 +6,7 @@ export default class Dashboard extends React.Component{
     state = {
         firstName: localStorage.getItem('user'),
         id: localStorage.getItem('id'),
-        flashcards: [
-        {name: 'vocabulary', bg: 'card-vocab'},
-        {name: 'reading', bg: 'card-reading'},
-        {name: 'astronomy', bg: 'card-astro'},
-        {name: 'chemistry', bg: 'card-chem'},
-        {name: 'math', bg: 'card-math'}
-        ]
+        flashcards: []
     }
 
     handleDeleteButton = (flashcardToRemove) => {
@@ -52,6 +46,9 @@ export default class Dashboard extends React.Component{
             return response.json();
         }).then(function(data) {
             console.log(data);
+            self.setState({
+                flashcards: data
+            })
 
         }).catch(err => {
             console.log('caught it!', err);

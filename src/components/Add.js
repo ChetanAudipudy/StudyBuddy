@@ -6,7 +6,8 @@ export default class QuestionPage extends React.Component {
     state = {
       unitName: '',
       description: '',
-      UserId: localStorage.getItem('id')
+      UserId: localStorage.getItem('id'),
+      bg: ''
     }
 
     handleChange = (e) => {
@@ -19,10 +20,11 @@ export default class QuestionPage extends React.Component {
       var data = {
         unitName: this.state.unitName,
         description: this.state.description,
-        UserId: this.state.UserId
+        UserId: this.state.UserId,
+        bg: this.state.bg
       }  
       console.log(data);
-      fetch("/api/units", {
+      fetch("/api/units/create", {
         method: 'POST',
         headers: {'Accept': 'application/json',
         'Content-Type': 'application/json'},
@@ -54,10 +56,9 @@ export default class QuestionPage extends React.Component {
                     </div>
 
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                      <input className="addnew" type="text" id="setname"  placeholder="name"/>
                       <input className="addnew" type="text" id="setsubject" name="unitName" onChange={this.handleChange} placeholder="subject"/>
                       <input className="addnew largetext" type="text" id="description" name="description" onChange={this.handleChange} placeholder="description"/>
-                      <input className="addnew" type="text" id="setbg"  placeholder="background image url"/>
+                      <input className="addnew" type="text" id="setbg" name="bg" onChange={this.handleChange} placeholder="background image url"/>
                     </div>
                       
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">

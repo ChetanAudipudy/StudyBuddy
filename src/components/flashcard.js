@@ -4,9 +4,10 @@ import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 import classnames from 'classnames';
 
 const Flashcard = (props) => {
- 
-  return (
-    <Link to={props.cardLink}><div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 cardbox">
+
+  return(
+    <Link to={props.cardLink}>
+    <div className="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 cardbox">
       <div className={classnames("card", "card-default", props.flashcardBg)}>
         <button className="white-button card-title">{props.flashcardText}</button>
         <button 

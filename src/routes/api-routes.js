@@ -43,7 +43,7 @@ module.exports = function(app) {
 
 	// post units
 	// KEEP IN MIND - req.body needs to be an object, so be sure to pass an object from the frontend
-	app.post("/api/units", function(req, res) {
+	app.post("/api/units/create", function(req, res) {
 		db.Unit.create(req.body).then(function(result) {
 			res.json(result);
 		});

@@ -1,18 +1,5 @@
 {
-  "restartable": "rs",
   "ignore": [
-    ".gitignore",
-    "node_modules/",
-    "public/bundle.js"
-  ],
-  "events": {
-    "exit": "npm run build"
-  },
-  "watch": [
-    "src/",
-    "public/",
-    "server.js",
-    "package.json"
-  ],
-  "ext": "js json css html"
+    "client/*"
+  ]
 }

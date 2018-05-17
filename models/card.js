@@ -1,23 +1,19 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = function(sequelize, DataTypes) {
 	var Card = sequelize.define("Card", {
-		question: {
+		problem: {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		correctAnswer: {
+		solution: {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		answer1: {
+		incorrect1: {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		answer2: {
+		incorrect2: {
 			type: DataTypes.STRING,
-			allowNull: false
-		},
-		answer3: {
-		    type: DataTypes.STRING,
 			allowNull: false
 		},
 		gotItRight: {
@@ -26,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	});
 
-	Card.associate = models => {
+	Card.associate = function(models) {
 		Card.belongsTo(models.Unit, {
 			foreignKey: {
 				allowNull: false

@@ -3,7 +3,7 @@ var path = require("path");
 var bodyParser = require("body-parser");
 var express = require("express");
 
-var publicPath = path.join(__dirname, "client/public");
+var publicPath = path.join(__dirname, "build");
 
 // initializes Express.js server and defines port
 var app = express();
@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(express.static(publicPath));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(publicPath, "index.html"))
+  res.sendFile(path.join(publicPath,"build", "index.html"))
 })
 //app.use(routes)
 

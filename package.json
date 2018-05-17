@@ -1,32 +1,30 @@
 {
-  "name": "StudyBuddy",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "server": "node server.js",
-    "client": "node scripts/start-client.js",
-    "start": "react-scripts start",
-    "build": "node scripts/build.js",
-    "seed": "node scripts/seedDB.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "installDeps": "yarn && cd client && yarn",
-    "heroku-postbuild":
-      "yarn && cd client && yarn --production=false && yarn run build"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "concurrently": "^3.5.0",
-    "nodemon": "^1.11.0"
-  },
+  "name": "sb",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "axios": "^0.16.2",
     "bcrypt": "^2.0.1",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "classnames": "^2.2.5",
     "mysql2": "^1.5.3",
     "path": "^0.12.7",
-    "sequelize": "^4.37.6"
+    "sequelize": "^4.37.6",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-modal": "^3.4.4",
+    "react-persist": "^1.0.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.1.2",
+    "react-scripts": "1.0.14",
+    "redux": "^4.0.0",
+    "redux-persist": "^5.9.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }

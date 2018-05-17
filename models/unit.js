@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
 	var Unit = sequelize.define("Unit", {
 		unitName: {
 			type: DataTypes.STRING,
@@ -9,14 +9,14 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		},
 		bg: {
-			type: DataTypes.STRING,
+			type: DataTypes.STRING
 		},
 		description: {
-			type: DataTypes.STRING,
+			type: DataTypes.STRING
 		}
 	});
 
-	Unit.associate = function(models) {
+	Unit.associate = models => {
 		Unit.belongsTo(models.User, {
 			foreignKey: {
 				allowNull: false

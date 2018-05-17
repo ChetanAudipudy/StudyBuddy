@@ -12,13 +12,20 @@ class ConnectedLogin extends React.Component {
        email: "",
        password: "",
        id: "",
-       firstName: "",
+       firstName: "", 
+       correctLogIn: undefined, 
+       openModal: false,
        signedIn: false
     };
 
     handleChange = e => {
         e.preventDefault();
         this.setState({ [e.target.name]: e.target.value });
+    };
+
+    handleClearModal = () => {
+        this.setState({ correctLogIn: undefined, openModal: false });
+        window.location.reload();
     };
 
     handleLogin = e => {
@@ -48,7 +55,7 @@ class ConnectedLogin extends React.Component {
                 });
                 this.setState({ signedIn: true });
             } else {
-                alert("Wrong log-in information! Please try again!");
+                this.setState({correctLogIn:false, openModal: true});
             }
         }).catch(err => {
             console.log("Error: " + err);
@@ -63,6 +70,12 @@ class ConnectedLogin extends React.Component {
                 <input type="password" id="password" placeholder="password" name="password" onChange={this.handleChange}/>
                 <button id="login-send" className="send" onClick={this.handleLogin}>log me in!</button>
             </div>
+
+            <SignupModal
+                confirmSignup={this.state.correctLogIn}
+                handleClearModal={this.handleClearModal}
+                openModal={this.state.openModal}
+            />
         </div> ) : <Redirect push to={{pathname:"/dashboard"}}/>
     };
 };

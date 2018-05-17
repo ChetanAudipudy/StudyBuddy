@@ -58,6 +58,7 @@ module.exports = app => {
     //Retrieves the user searching by email and
     //ensures the passwords match
 
+
     app.post("/api/users/login", (req, res) => {
         var users = [];
      
@@ -67,8 +68,8 @@ module.exports = app => {
                 }
             }).then(result => {
             users = JSON.parse(JSON.stringify(result));
-            console.log(users);
-            if (req.body === undefined){
+
+            if (!users[0]){
                 res.json(new Error("User not found!"));
             }         
             else if (bcrypt.compareSync(req.body.password, users[0].password)) {

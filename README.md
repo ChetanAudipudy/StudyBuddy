@@ -3,6 +3,8 @@ A fully-responsive application designed to help users study. Users can create th
 
 [Study Buddy](https://study-buddy-nw.herokuapp.com/)
 
+[Development repo](https://github.com/karamui/StudyBuddy2)
+
 # Local Deployment
 1 - Enter the following command in the root directory. Once all packages have finished installing, repeat this step in the "client" folder.
 
